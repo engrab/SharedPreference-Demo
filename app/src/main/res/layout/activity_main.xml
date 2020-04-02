@@ -7,72 +7,65 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="E Mail"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Submit" />
-
-    <Button
-        android:id="@+id/skip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Skip Login" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/textview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:text="degault name"
         android:textSize="36sp" />
 
     <EditText
-        android:id="@+id/email2"
+        android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:ems="10"
-        android:hint="E Mail"
-        android:inputType="textEmailAddress" />
+        android:hint="Enter your name"
+         />
 
     <EditText
-        android:id="@+id/password2"
+        android:id="@+id/age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        android:inputType="number"
+        android:hint="Enter age" />
 
     <Button
-        android:id="@+id/save"
+        android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:onClick="save"
         android:text="Save" />
 
-    <Button
-        android:id="@+id/read"
+
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:onClick="read"
-        android:text="Read" />
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/btn_read"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:text="Read"/>
+        <Button
+            android:id="@+id/btn_remove"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:text="Remove"/>
+        <Button
+            android:id="@+id/btn_remove_all"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:text="Remove All"/>
+
+    </LinearLayout>
 </LinearLayout>
