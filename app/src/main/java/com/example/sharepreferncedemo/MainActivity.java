@@ -11,8 +11,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.Map;
 import java.util.Set;
+
+import static android.provider.Contacts.SettingsColumns.KEY;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String PASSWORD_KEY = "password_key";
     EditText email, password;
     SharedPreferences.OnSharedPreferenceChangeListener mListener;
+    EditText name, age;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -28,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
+        name = findViewById(R.id.email2);
+        age = findViewById(R.id.password2);
         final TextView tvname = findViewById(R.id.name);
 
         SharedPreferences sharedPreferencess = PreferenceManager.getDefaultSharedPreferences(this);
@@ -70,5 +77,31 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             }
         });
+    }
+
+    public void save(View view){
+        String nameStr = name.getText().toString();
+        int ageStr = Integer.parseInt(age.getText().toString());
+
+        User user = new User(ageStr, nameStr);
+        Gson gson = new Gson();
+        String jsonString;
+        jsonString = gson.toJson(user, User.class);
+
+        SharedPreferences.Editor s = PreferenceManager.getDefaultSharedPreferences(this).edit();
+        s.putString("key",jsonString);
+        s.apply();
+
+
+    }
+    public void read(View view){
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String data = sharedPreferences.getString("key", "default");
+
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra("key", data);
+        startActivity(intent);
+
     }
 }

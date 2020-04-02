@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="User Name Dialoge">
+
+        <EditTextPreference
+            android:defaultValue="Enter The Name"
+            android:key="edit_name"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Enter The User Name"
+            android:summary="Enter The User Name Here..."/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Choose Color">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="color"
+            android:title="For Day/Night Mode" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Keep Login">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="keep_login"
+            android:title="Choose for Keep Login" />
+    </PreferenceCategory>
+</PreferenceScreen>
